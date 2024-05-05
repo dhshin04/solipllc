@@ -1,0 +1,399 @@
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+// Header
+a {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-header {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1em 2em 1em 3em;
+    background-color: white;
+    justify-content: space-between;
+    z-index: 999;
+    align-items: center;
+
+    svg {
+        width: 2.3em;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    img {
+        width: 3.5em;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+    }
+}
+
+nav {
+    position: fixed;
+    overflow-y: scroll;
+    right: 0;
+    top: 0;
+    background: white;
+    height: 100vh;
+    width: 100%;
+    z-index: 2;
+    transform: translateY(-100%);
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 7em;
+
+        a {
+            color: black;
+            padding: 1.5em 2.5em;
+            font-weight: 300;
+            display: block;
+        
+            &:hover {
+                background: rgb(255, 235, 235);
+            }
+        }
+    }
+
+    .close {
+        float: right;
+        margin: 6em 1.5em;
+        width: 2.5em;
+    }
+}
+
+.open-nav {
+    transform: translateY(0);
+}
+
+.transition {
+    transition: transform .5s ease-in-out;
+}
+
+// Section Hero
+section.hero {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    .hero-img {
+        position: absolute;
+        opacity: 0.4;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .text {
+        position: relative;
+        margin: 0;
+        padding: 8em 1em 0em 1em;
+        top: 0;
+        text-align: center;
+        opacity: 1;
+
+        .buttons {
+            display: grid;
+            //flex-direction: column;
+            //gap: 5rem;
+            margin-bottom: 3em;
+            
+            //Grid itself is center-aligned within section.hero
+            justify-content: center;
+            align-content: center;
+    
+            //Container class within each grid is center-aligned
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+        }
+
+        .hero-text {
+            font-weight: 400;
+            font-size: 1.25rem;
+            margin: 3em 0em;
+            color: #530087;
+        }
+    }
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    padding: 0;
+    margin: 0;
+    color: #1c0041;
+
+    animation: fadeInMoveUp 1.0s ease-in-out forwards;
+}
+
+@keyframes fadeInMoveUp {
+    from {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+button {
+    background-color: #0066ff;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 1em auto;
+    padding: .7em 2em;
+    font-size: 1.1rem;
+    transition: background-color .35s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #0022aa;
+    }
+}
+
+
+// Section Procedure
+section.procedure {
+    padding: 2em;
+
+    h2 {
+        font-size: 2rem;
+        padding: 0;
+        margin: 0em 0em 1em 0em;
+        color: #260058;
+    }
+
+    .steps {
+        display: grid;
+
+        justify-content: center;
+        align-content: center;
+
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+    }
+
+    .step {
+        display: flex;
+        gap: 1.5rem;
+
+        h4 {
+            color: #4769e4;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        p {
+            padding: 0;
+            margin: 0;
+            font-size: 1rem;
+        }
+    }
+
+    a {
+        color: #0062ff;
+        text-decoration: underline;
+    }
+
+    a:visited {
+        color: #0042ab;
+        text-decoration: underline;
+    }
+}
+
+// Footer
+footer {
+    background-color: rgb(35, 6, 89);
+    
+    p {
+        color: #FFFFFF;
+        padding: 0.75em 0em;
+        font-size: 0.9rem;
+        text-align: center;
+        font-weight: 300;
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 606px) {
+    .mobile-header {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+
+    section.hero .text {
+        padding: 8em 3em 0em 3em;
+    }
+
+    section.procedure {
+        padding: 3em;
+
+        h2 {
+            font-size: 2.3rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 850px) {
+    .menu {
+        display: none;
+    }
+
+    header {
+        position: fixed;
+        display: flex;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 1em 3em 1em 5em;
+        background-color: white;
+        justify-content: space-between;
+        z-index: 999;
+        align-items: center;
+
+        .mobile-header {
+            position: unset;
+            padding: 0em;
+        }
+
+        nav {
+            transform: translateY(0);
+            position: unset;
+            overflow-y: auto;
+            display: block;
+            width: auto;
+            height: auto;
+            background: none;
+            z-index: 999;
+    
+            .close {
+                display: none;
+            }
+    
+            ul {
+                display: flex;
+                margin: 0;
+                padding: 0;
+                
+                a {
+                    padding: 0.05em 0.5em 0em 0.5em;
+                    color: rgb(0, 0, 0);
+                    transition: color 0.4s;
+                    font-size: 1.15rem;
+                    font-weight: 700;
+                    cursor: pointer;
+    
+                    &:hover {
+                        background: none;
+                        color: rgb(151, 151, 151);
+                    }
+                }
+    
+                .home {
+                    color: rgb(92, 92, 92);
+                }
+            }
+        }
+    }
+
+    section.hero .text {
+        padding: 10em 5em 0em 5em;
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 4.5rem;
+        }
+
+        .hero-text {
+            font-size: 1.4rem;
+        }
+
+        .buttons {
+            margin-bottom: 5em;
+        }
+    }
+
+    button {
+        font-size: 1.25rem;
+    }
+
+    section.procedure {
+        padding: 3em 5em;
+
+        h2 {
+            font-size: 2.7rem;
+        }
+
+        .step h4, .step p {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    header {
+        padding-left: 8em;
+        padding-right: 6em;
+
+        nav ul a {
+            padding: 0.05em .75em 0em .75em;
+        }
+    }
+
+    section.hero .text {
+        padding: 11em 7em 0em 7em;
+
+        h1 {
+            font-size: 4.5rem;
+            line-height: 5.5rem;
+        }
+
+        .hero-text {
+            font-size: 1.4rem;
+            margin: 4em 0em;
+        }
+
+        .buttons {
+            margin-bottom: 6em;
+        }
+    }
+
+    button {
+        font-size: 1.25rem;
+    }
+
+    section.procedure {
+        padding: 3em 5em;
+
+        h2 {
+            font-size: 3.5rem;
+        }
+
+        .step h4, .step p {
+            font-size: 1.1rem;
+        }
+    }
+}

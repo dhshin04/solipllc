@@ -1,0 +1,330 @@
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: rgb(242, 242, 242);
+}
+
+a {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-header {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1em 2em 1em 3em;
+  background-color: white;
+  justify-content: space-between;
+  z-index: 999;
+  align-items: center;
+}
+.mobile-header svg {
+  width: 2.3em;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.logo img {
+  width: 3.5em;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+nav {
+  position: fixed;
+  overflow-y: scroll;
+  right: 0;
+  top: 0;
+  background: white;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+  transform: translateY(-100%);
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 7em;
+}
+nav ul a {
+  color: black;
+  padding: 1.5em 2.5em;
+  font-weight: 300;
+  display: block;
+}
+nav ul a:hover {
+  background: rgb(255, 235, 235);
+}
+nav .close {
+  float: right;
+  margin: 6em 1.5em;
+  width: 2.5em;
+}
+
+.open-nav {
+  transform: translateY(0);
+}
+
+.transition {
+  transition: transform 0.5s ease-in-out;
+}
+
+section.about {
+  margin-top: 5em;
+  padding: 4em 2em;
+  text-align: center;
+}
+section.about p a {
+  color: #0062ff;
+  text-decoration: underline;
+}
+section.about p a:visited {
+  color: #0042ab;
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 3.5rem;
+  padding: 0;
+  margin: 0 0 1em 0;
+}
+
+p {
+  font-size: 1rem;
+  padding: 0;
+  margin: 1em 0 0 0;
+}
+
+.program, .program2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+}
+.program h2, .program2 h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: white;
+  padding: 0em 2em;
+}
+.program .image, .program2 .image {
+  position: absolute;
+  opacity: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.program .desc, .program2 .desc {
+  text-align: left;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  top: 2.5%;
+  left: 1.5%;
+  width: 97%;
+  height: 95%;
+  background-color: white;
+}
+.program .desc h3, .program2 .desc h3 {
+  color: black;
+  font-size: 1.5rem;
+  margin: 1em;
+}
+.program .desc ul, .program2 .desc ul {
+  margin: 0em 1em;
+  color: black;
+  font-size: 1.25rem;
+}
+.program .desc ul a, .program2 .desc ul a {
+  color: #0062ff;
+  text-decoration: underline;
+}
+.program .desc ul a:visited, .program2 .desc ul a:visited {
+  color: #0042ab;
+  text-decoration: underline;
+}
+.program:hover .desc, .program2:hover .desc {
+  opacity: 1;
+}
+.program:hover h2, .program2:hover h2 {
+  opacity: 0;
+}
+
+.program2 h2 {
+  color: black;
+}
+.program2 .image {
+  opacity: 0.3;
+}
+.program2 li {
+  margin-bottom: 1em;
+}
+
+footer {
+  background-color: rgb(35, 6, 89);
+}
+footer p {
+  color: #FFFFFF;
+  padding: 0.75em 0em;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 300;
+  margin: 0;
+}
+
+@media only screen and (min-width: 606px) {
+  .mobile-header {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+  section.about {
+    padding: 6em 4em;
+  }
+  h1 {
+    margin: 0 0 1em 0;
+  }
+  .program .desc, .program2 .desc {
+    left: 1%;
+    width: 98%;
+  }
+}
+@media only screen and (min-width: 850px) {
+  .menu {
+    display: none;
+  }
+  header {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1em 3em 1em 5em;
+    background-color: white;
+    justify-content: space-between;
+    z-index: 999;
+    align-items: center;
+  }
+  header .mobile-header {
+    position: unset;
+    padding: 0em;
+  }
+  header nav {
+    transform: translateY(0);
+    position: unset;
+    overflow-y: auto;
+    display: block;
+    width: auto;
+    height: auto;
+    background: none;
+    z-index: 999;
+  }
+  header nav .close {
+    display: none;
+  }
+  header nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  header nav ul a {
+    padding: 0.05em 0.5em 0em 0.5em;
+    color: rgb(0, 0, 0);
+    transition: color 0.4s;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  header nav ul a:hover {
+    background: none;
+    color: rgb(151, 151, 151);
+  }
+  header nav ul .licensing-nav {
+    color: rgb(92, 92, 92);
+  }
+  section.about {
+    padding: 7em 6em;
+    text-align: left;
+  }
+  section.about h1 {
+    font-size: 3.5rem;
+    margin: 0 0 1.25em 0;
+  }
+  p {
+    font-size: 1.1rem;
+  }
+  .programs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  .programs h2 {
+    font-size: 2.2rem;
+  }
+  .programs .program2 .image {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .program .desc, .program2 .desc {
+    left: 1.5%;
+    width: 97%;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  header {
+    padding-left: 8em;
+    padding-right: 6em;
+  }
+  header nav ul a {
+    padding: 0.05em 0.75em 0em 0.75em;
+  }
+  section.about {
+    padding: 7em;
+  }
+  section.about h1 {
+    font-size: 4.5rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  .program, .program2 {
+    height: 425px;
+  }
+  .program h2, .program2 h2 {
+    font-size: 3.5rem;
+  }
+  .program .desc h3, .program2 .desc h3 {
+    font-size: 2rem;
+    margin: 1.2em 1em;
+  }
+  .program .desc ul, .program2 .desc ul {
+    margin: 0 2em;
+    font-size: 1.5rem;
+  }
+  .program ul ul li {
+    margin-bottom: 1em;
+  }
+  .program2 li {
+    margin-bottom: 1.5em;
+  }
+}/*# sourceMappingURL=licensing.css.map */
